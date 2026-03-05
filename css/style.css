@@ -2,15 +2,15 @@
     --bg: #0b1220;
     --paper: #0f1c2f;
     --ink: #eaf2ff;
-    --muted: rgba(234, 242, 255, .72);
+    --muted: rgba(234, 242, 255, 0.72);
     --blue: #3b82f6;
     --green: #22c55e;
-    --line: rgba(255, 255, 255, .14);
+    --line: rgba(255, 255, 255, 0.14);
     --radius: 16px;
 }
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 body {
@@ -20,18 +20,19 @@ body {
     color: var(--ink);
 }
 
+/* HEADER */
 .top {
     text-align: center;
     padding: 22px 14px 10px;
 }
 
 .top h1 {
-    margin: 0
+    margin: 0;
 }
 
 .top p {
     margin: 6px 0 0;
-    color: var(--muted)
+    color: var(--muted);
 }
 
 .wrap {
@@ -54,12 +55,13 @@ input[type="radio"] {
     margin: 0 auto;
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: rgba(255, 255, 255, .03);
+    background: rgba(255, 255, 255, 0.03);
     overflow: hidden;
-    box-shadow: 0 14px 40px rgba(0, 0, 0, .45);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
 
-    /* FIX FOR PAGE FLIP */
+    /* 3D flip support */
     perspective: 1500px;
+    transform-style: preserve-3d;
 }
 
 /* each page */
@@ -67,22 +69,29 @@ input[type="radio"] {
     position: absolute;
     inset: 0;
     padding: 18px;
-    background: linear-gradient(120deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    border-left: 1px solid rgba(255, 255, 255, 0.10);
+
     transform-origin: left center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+
     transition: transform 700ms ease;
 
-    border-left: 1px solid rgba(255, 255, 255, .10);
+    /* DEFAULT: all pages closed */
+    transform: rotateY(-180deg);
 
-    /* IMPORTANT */
-    backface-visibility: hidden;
+    /* Only the active page can be clicked */
+    pointer-events: none;
 }
 
 .content {
     height: 100%;
-    background: rgba(255, 255, 255, .04);
-    border: 1px solid rgba(255, 255, 255, .10);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: var(--radius);
     padding: 18px;
+
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -91,9 +100,9 @@ input[type="radio"] {
 /* Cover style */
 .cover .content {
     background:
-        radial-gradient(240px 160px at 20% 20%, rgba(59, 130, 246, .18), transparent 60%),
-        radial-gradient(240px 160px at 80% 70%, rgba(34, 197, 94, .14), transparent 60%),
-        rgba(255, 255, 255, .04);
+        radial-gradient(240px 160px at 20% 20%, rgba(59, 130, 246, 0.18), transparent 60%),
+        radial-gradient(240px 160px at 80% 70%, rgba(34, 197, 94, 0.14), transparent 60%),
+        rgba(255, 255, 255, 0.04);
 }
 
 .quote {
@@ -102,8 +111,8 @@ input[type="radio"] {
 }
 
 .tiny {
-    color: rgba(234, 242, 255, .55);
-    font-size: .92rem;
+    color: rgba(234, 242, 255, 0.55);
+    font-size: 0.92rem;
     margin-top: auto;
 }
 
@@ -114,6 +123,7 @@ input[type="radio"] {
     flex-wrap: wrap;
 }
 
+/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -124,13 +134,13 @@ input[type="radio"] {
     user-select: none;
     font-weight: 700;
     border: 1px solid var(--line);
-    background: rgba(255, 255, 255, .04);
+    background: rgba(255, 255, 255, 0.04);
     color: var(--ink);
     text-decoration: none;
 }
 
 .btn:hover {
-    background: rgba(255, 255, 255, .07);
+    background: rgba(255, 255, 255, 0.07);
 }
 
 .btn.next {
@@ -144,8 +154,8 @@ input[type="radio"] {
 }
 
 .fadeNote {
-    color: rgba(234, 242, 255, .60);
-    font-size: .95rem;
+    color: rgba(234, 242, 255, 0.60);
+    font-size: 0.95rem;
 }
 
 /* STAR AREA */
@@ -153,8 +163,8 @@ input[type="radio"] {
     margin-top: 8px;
     padding: 14px;
     border-radius: 14px;
-    border: 1px dashed rgba(255, 255, 255, .25);
-    background: rgba(0, 0, 0, .22);
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.22);
 }
 
 .star {
@@ -173,8 +183,8 @@ input[type="radio"] {
     margin-top: 10px;
     padding: 10px;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, .12);
-    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
     opacity: 0;
     transform: translateY(8px);
     transition: 350ms ease;
@@ -194,6 +204,7 @@ input[type="radio"] {
 /* STACK pages order */
 .cover {
     z-index: 5;
+    transform: rotateY(0deg);
 }
 
 .page1 {
@@ -247,6 +258,15 @@ input[type="radio"] {
 
 #p5:checked~.wrap .back {
     transform: rotateY(0deg);
+}
+
+/* Only the active/open page can be clicked */
+#p1:checked~.wrap .cover,
+#p2:checked~.wrap .page1,
+#p3:checked~.wrap .page2,
+#p4:checked~.wrap .page3,
+#p5:checked~.wrap .back {
+    pointer-events: auto;
 }
 
 /* Animation #2: text fade-in when a page becomes active */
