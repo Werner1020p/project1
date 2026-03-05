@@ -57,6 +57,9 @@ input[type="radio"] {
     background: rgba(255, 255, 255, .03);
     overflow: hidden;
     box-shadow: 0 14px 40px rgba(0, 0, 0, .45);
+
+    /* FIX FOR PAGE FLIP */
+    perspective: 1500px;
 }
 
 /* each page */
@@ -67,8 +70,11 @@ input[type="radio"] {
     background: linear-gradient(120deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
     transform-origin: left center;
     transition: transform 700ms ease;
-    /* Animation: page flip (part) */
+
     border-left: 1px solid rgba(255, 255, 255, .10);
+
+    /* IMPORTANT */
+    backface-visibility: hidden;
 }
 
 .content {
