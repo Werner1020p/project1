@@ -1,0 +1,291 @@
+:root {
+    --bg: #0b1220;
+    --paper: #0f1c2f;
+    --ink: #eaf2ff;
+    --muted: rgba(234, 242, 255, .72);
+    --blue: #3b82f6;
+    --green: #22c55e;
+    --line: rgba(255, 255, 255, .14);
+    --radius: 16px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Arial, system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+.top {
+    text-align: center;
+    padding: 22px 14px 10px;
+}
+
+.top h1 {
+    margin: 0
+}
+
+.top p {
+    margin: 6px 0 0;
+    color: var(--muted)
+}
+
+.wrap {
+    width: min(980px, 92vw);
+    margin: 0 auto;
+    padding: 18px 0 60px;
+}
+
+/* Hide radio buttons */
+input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+/* BOOK */
+.book {
+    position: relative;
+    width: min(760px, 92vw);
+    height: min(520px, 70vh);
+    margin: 0 auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, .03);
+    overflow: hidden;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, .45);
+}
+
+/* each page */
+.page {
+    position: absolute;
+    inset: 0;
+    padding: 18px;
+    background: linear-gradient(120deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+    transform-origin: left center;
+    transition: transform 700ms ease;
+    /* Animation: page flip (part) */
+    border-left: 1px solid rgba(255, 255, 255, .10);
+}
+
+.content {
+    height: 100%;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: var(--radius);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Cover style */
+.cover .content {
+    background:
+        radial-gradient(240px 160px at 20% 20%, rgba(59, 130, 246, .18), transparent 60%),
+        radial-gradient(240px 160px at 80% 70%, rgba(34, 197, 94, .14), transparent 60%),
+        rgba(255, 255, 255, .04);
+}
+
+.quote {
+    color: var(--muted);
+    font-style: italic;
+}
+
+.tiny {
+    color: rgba(234, 242, 255, .55);
+    font-size: .92rem;
+    margin-top: auto;
+}
+
+.navRow {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 700;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, .04);
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, .07);
+}
+
+.btn.next {
+    border: none;
+    background: linear-gradient(135deg, var(--blue), var(--green));
+    color: #071423;
+}
+
+.btn.ghost {
+    background: transparent;
+}
+
+.fadeNote {
+    color: rgba(234, 242, 255, .60);
+    font-size: .95rem;
+}
+
+/* STAR AREA */
+.starBox {
+    margin-top: 8px;
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px dashed rgba(255, 255, 255, .25);
+    background: rgba(0, 0, 0, .22);
+}
+
+.star {
+    font-size: 42px;
+    width: fit-content;
+    animation: starFloat 2.6s ease-in-out infinite;
+    /* Animation #3 */
+}
+
+.hint {
+    margin: 6px 0 0;
+    color: var(--muted);
+}
+
+.secret {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, .04);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: 350ms ease;
+}
+
+/* Interaction #2: hover reveals secret */
+.starBox:hover .secret {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Credits */
+.credits {
+    color: var(--muted);
+}
+
+/* STACK pages order */
+.cover {
+    z-index: 5;
+}
+
+.page1 {
+    z-index: 4;
+}
+
+.page2 {
+    z-index: 3;
+}
+
+.page3 {
+    z-index: 2;
+}
+
+.back {
+    z-index: 1;
+}
+
+/* PAGE FLIP STATES (Animation #1) */
+#p1:checked~.wrap .cover {
+    transform: rotateY(0deg);
+}
+
+#p2:checked~.wrap .cover {
+    transform: rotateY(-180deg);
+}
+
+#p2:checked~.wrap .page1 {
+    transform: rotateY(0deg);
+}
+
+#p3:checked~.wrap .page1 {
+    transform: rotateY(-180deg);
+}
+
+#p3:checked~.wrap .page2 {
+    transform: rotateY(0deg);
+}
+
+#p4:checked~.wrap .page2 {
+    transform: rotateY(-180deg);
+}
+
+#p4:checked~.wrap .page3 {
+    transform: rotateY(0deg);
+}
+
+#p5:checked~.wrap .page3 {
+    transform: rotateY(-180deg);
+}
+
+#p5:checked~.wrap .back {
+    transform: rotateY(0deg);
+}
+
+/* Animation #2: text fade-in when a page becomes active */
+#p2:checked~.wrap .page1 .content,
+#p3:checked~.wrap .page2 .content,
+#p4:checked~.wrap .page3 .content,
+#p5:checked~.wrap .back .content {
+    animation: textIn 500ms ease both;
+}
+
+@keyframes textIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes starFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+    .book {
+        height: 72vh;
+    }
+
+    .content {
+        padding: 14px;
+    }
+
+    .star {
+        font-size: 38px;
+    }
+}

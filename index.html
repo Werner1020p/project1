@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>El Principito & Mi Historia</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="top">
+        <h1>El Principito & Mi Historia</h1>
+        <p>Una historia que solo se revela con interacción.</p>
+    </header>
+
+    <!-- BOOK CONTROLS (radio buttons) -->
+    <input type="radio" name="page" id="p1" checked>
+    <input type="radio" name="page" id="p2">
+    <input type="radio" name="page" id="p3">
+    <input type="radio" name="page" id="p4">
+    <input type="radio" name="page" id="p5">
+
+    <main class="wrap">
+        <section class="book" aria-label="Libro interactivo">
+
+            <!-- FRONT COVER -->
+            <div class="page cover">
+                <div class="content">
+                    <h2>Portada</h2>
+                    <p class="quote">“Lo esencial es invisible a los ojos.”</p>
+                    <p>
+                        En este libro mezclo <strong>El Principito</strong> con mi propia historia.
+                        Haz click para pasar páginas.
+                    </p>
+
+                    <label class="btn next" for="p2" data-sound="flip">Abrir el libro →</label>
+
+                    <p class="tiny">Tip: En móvil también funciona. ✅</p>
+                </div>
+            </div>
+
+            <!-- PAGE 1 -->
+            <div class="page page1">
+                <div class="content">
+                    <h2>Página 1: Salir de casa</h2>
+                    <p>
+                        El Principito dejó su planeta para explorar el universo.
+                        Yo también salí de mi hogar para buscar un nuevo camino.
+                    </p>
+
+                    <p class="fadeNote">
+                        (Este texto aparece con una animación.)
+                    </p>
+
+                    <div class="navRow">
+                        <label class="btn ghost prev" for="p1" data-sound="flip">← Atrás</label>
+                        <label class="btn next" for="p3" data-sound="flip">Siguiente →</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE 2 -->
+            <div class="page page2">
+                <div class="content">
+                    <h2>Página 2: Ver diferente</h2>
+                    <p>
+                        El Principito ve cosas que muchos adultos no ven.
+                        Cuando llegué a un lugar nuevo, empecé a ver el mundo con otros ojos.
+                    </p>
+
+                    <div class="navRow">
+                        <label class="btn ghost prev" for="p2" data-sound="flip">← Atrás</label>
+                        <label class="btn next" for="p4" data-sound="flip">Siguiente →</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE 3 (Hover secret) -->
+            <div class="page page3">
+                <div class="content">
+                    <h2>Página 3: Lo que importa</h2>
+                    <p>
+                        A veces lo más importante no se ve. Se siente.
+                    </p>
+
+                    <div class="starBox">
+                        <div class="star" aria-hidden="true">★</div>
+                        <p class="hint">Pasa el mouse por la estrella ⭐</p>
+
+                        <div class="secret">
+                            <p><strong>Secreto:</strong> Mi meta es crecer, aprender, y construir algo mejor para mi
+                                futuro.</p>
+                        </div>
+                    </div>
+
+                    <div class="navRow">
+                        <label class="btn ghost prev" for="p3" data-sound="flip">← Atrás</label>
+                        <label class="btn next" for="p5" data-sound="flip">Final →</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BACK COVER -->
+            <div class="page back">
+                <div class="content">
+                    <h2>Final</h2>
+                    <p>
+                        Este proyecto es una mezcla de inspiración y vida real.
+                        Gracias por leer mi historia.
+                    </p>
+
+                    <label class="btn next" for="p1" data-sound="flip">Reiniciar ↺</label>
+
+                    <hr>
+                    <h3>Créditos</h3>
+                    <ul class="credits">
+                        <li>Sonido “page flip”: <em>agrega aquí tu fuente</em></li>
+                        <li>Imágenes (si usas): <em>agrega aquí tu fuente</em></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Sound (must be triggered by user action) -->
+    <audio id="flipSound" src="assets/sound/page-flip.mp3"></audio>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
