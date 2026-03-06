@@ -1,15 +1,23 @@
 const flipSound = document.getElementById("flipSound");
+let audioStarted = false;
 
-// Play sound only when user clicks a page button
-document.querySelectorAll('[data-sound="flip"]').forEach((btn) => {
+document.querySelectorAll(".btn").forEach((btn) => {
     btn.addEventListener("click", () => {
         if (!flipSound) return;
 
-        flipSound.currentTime = 0;
+        const goTo = btn.getAttribute("for");
 
-        flipSound.play().catch(() => {
-            // Some browsers block sound until a user interaction.
-            // This click counts as interaction, so usually it will play.
-        });
+        // Start ONLY when opening the book (p2)
+        if (!audioStarted && goTo === "p2") {
+            flipSound.currentTime = 0;
+            flipSound.play().catch(() => { });
+            audioStarted = true;
+        }
+
+        // Restart audio if user restarts story
+        if (audioStarted && goTo === "p1") {
+            flipSound.currentTime = 0;
+            flipSound.play().catch(() => { });
+        }
     });
 });

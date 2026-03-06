@@ -1,20 +1,20 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Little Prince (My Story)</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>The Little Prince (W3RN3R version)</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
     <header class="top">
-        <h1>The Little Prince (My Story)</h1>
+        <h1>The Little Prince (W3RN3R version)</h1>
         <p>A story that is only revealed through interaction.</p>
     </header>
 
-    <!-- BOOK CONTROLS (radio buttons) -->
+    <!-- BOOK CONTROLS -->
     <input type="radio" name="page" id="p1" checked>
     <input type="radio" name="page" id="p2">
     <input type="radio" name="page" id="p3">
@@ -22,110 +22,176 @@
     <input type="radio" name="page" id="p5">
 
     <main class="wrap">
-        <section class="book" aria-label="Libro interactivo">
+        <section class="book" aria-label="Interactive book">
 
-            <!-- FRONT COVER -->
+            <!-- COVER -->
             <div class="page cover">
                 <div class="content">
-                    <h2>Portada</h2>
-                    <p class="quote">“What is essential is invisible to the eyes”</p>
-                    <p>
-                        In this book I combined <strong>The Little Prince</strong> with my very own motivational story.
-                        Click to turn pages.
-                    </p>
+                    <h2>Cover</h2>
 
-                    <label class="btn next" for="p2" data-sound="flip">Abrir el libro →</label>
+                    <div class="media coverMedia">
+                        <img src="assets/img/prince3.jpg" alt="The Little Prince cover image" />
+                        <div class="coverOverlay">
+                            <h3 class="coverTitle">The Little Prince<br><span>(My Story)</span></h3>
+                        </div>
+                    </div>
 
-                    <p class="tiny">Tip: En móvil también funciona. ✅</p>
+                    <p class="quote">“What is Essential is Invisible to the eyes.”</p>
+
+                    <div class="scrollArea">
+                        <p>
+                            In this short interactive book, I combine <strong>The Little Prince</strong> with my
+                            personal story.
+                        </p>
+                    </div>
+
+                    <div class="navRow">
+                        <label class="btn next" for="p2" data-sound="flip">Open the book →</label>
+                    </div>
                 </div>
             </div>
 
-            <!-- PAGE 1 -->
+            <!-- CHAPTER 1 -->
             <div class="page page1">
                 <div class="content">
-                    <h2>Página 1: Salir de casa</h2>
-                    <p>
-                        El Principito dejó su planeta para explorar el universo.
-                        Yo también salí de mi hogar para buscar un nuevo camino.
-                    </p>
+                    <h2>Chapter 1: Leaving Home</h2>
 
-                    <p class="fadeNote">
-                        (Este texto aparece con una animación.)
-                    </p>
+                    <div class="media">
+                        <img src="assets/img/prince1.jpg" alt="Chapter 1 illustration" />
+                    </div>
+
+                    <div class="scrollArea">
+                        <p>
+                            As most people probably already know, the story of this wonderful little explorer, the
+                            Little Prince, leaves his tiny planet to explore the universe. A vast universe full of
+                            adventures to
+                            discover and experience.
+                        </p>
+
+                        <p>
+                            In my own life, I also left home to seek a new path and grow, completely unaware of what the
+                            future might hold
+                            and what life would be like on the other side of the planet, beyond the horizon. This time,
+                            I left my country,
+                            Guatemala, at the age of 15, along with my sister and my mother, to reunite with my father
+                            in a world entirely
+                            different from the one I left behind.
+                        </p>
+                    </div>
 
                     <div class="navRow">
-                        <label class="btn ghost prev" for="p1" data-sound="flip">← Atrás</label>
-                        <label class="btn next" for="p3" data-sound="flip">Siguiente →</label>
+                        <label class="btn ghost prev" for="p1" data-sound="flip">&#8656;Back</label>
+                        <label class="btn next" for="p3" data-sound="flip">Next&#8658;</label>
                     </div>
                 </div>
             </div>
 
-            <!-- PAGE 2 -->
+            <!-- CHAPTER 2 -->
             <div class="page page2">
                 <div class="content">
-                    <h2>Página 2: Ver diferente</h2>
-                    <p>
-                        El Principito ve cosas que muchos adultos no ven.
-                        Cuando llegué a un lugar nuevo, empecé a ver el mundo con otros ojos.
-                    </p>
+                    <h2>Chapter 2: Seeing Differently</h2>
+
+                    <div class="media">
+                        <img src="assets/img/prince2.jpg" alt="Chapter 2 illustration" />
+                    </div>
+
+                    <div class="scrollArea">
+                        <p>The Little Prince notices things that many adults sometimes ignore.</p>
+
+                        <p>
+                            When I arrived into this new place, New York (USA), I began to see life with new eyes.
+                            Everything was completely different: advanced technology, innovative transportation,
+                            remarkable security,
+                            and a different system. I felt small even in front of the enormous skyscrapers the first
+                            time I saw the city.
+                        </p>
+                    </div>
 
                     <div class="navRow">
-                        <label class="btn ghost prev" for="p2" data-sound="flip">← Atrás</label>
-                        <label class="btn next" for="p4" data-sound="flip">Siguiente →</label>
+                        <label class="btn ghost prev" for="p2" data-sound="flip">&#8656;Back</label>
+                        <label class="btn next" for="p4" data-sound="flip">Next&#8658;</label>
                     </div>
                 </div>
             </div>
 
-            <!-- PAGE 3 (Hover secret) -->
+            <!-- CHAPTER 3 -->
             <div class="page page3">
                 <div class="content">
-                    <h2>Página 3: Lo que importa</h2>
-                    <p>
-                        A veces lo más importante no se ve. Se siente.
-                    </p>
+                    <h2>Chapter 3: What Matters</h2>
 
-                    <div class="starBox">
-                        <div class="star" aria-hidden="true">★</div>
-                        <p class="hint">Pasa el mouse por la estrella ⭐</p>
+                    <!-- fox picture-->
+                    <div class="media">
+                        <img src="assets/img/prince5.jpg" alt="The fox and the lesson" />
+                    </div>
 
-                        <div class="secret">
-                            <p><strong>Secreto:</strong> Mi meta es crecer, aprender, y construir algo mejor para mi
-                                futuro.</p>
+                    <div class="scrollArea">
+                        <p>
+                            Sometimes the most important things aren't seen. They're felt. Family, friends, neighbors,
+                            communities,
+                            and even strangers can shape who we become. Like any good adventurer, the Little Prince
+                            taught me that even though we may leave precius things behind we gotta keep bein curius and
+                            positive every single day,
+                            the beauty of life can be found in every corner, detail, place, and person.
+                        </p>
+
+                        <div class="starBox">
+                            <div class="star" aria-hidden="true">★</div>
+                            <p class="hint">Hover the star ⭐ to reveal a secret</p>
+
+                            <div class="secret">
+                                <p><strong>Secret:</strong> My goal in this new world (New York City) is to keep loving
+                                    the people close to me.</p>
+                                <ol>
+                                    <li>Build my dreams</li>
+                                    <li>Graduate from Hunter College (prove to myself I can do what I set my mind to)
+                                    </li>
+                                    <li>Keep discovering new things every day</li>
+                                    <li>Never give up on my dreams</li>
+                                    <li>Stay curious like a true explorer</li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
 
                     <div class="navRow">
-                        <label class="btn ghost prev" for="p3" data-sound="flip">← Atrás</label>
-                        <label class="btn next" for="p5" data-sound="flip">Final →</label>
+                        <label class="btn ghost prev" for="p3" data-sound="flip">&#8656;Back</label>
+                        <label class="btn next" for="p5" data-sound="flip">Final&#8658;</label>
                     </div>
                 </div>
             </div>
 
-            <!-- BACK COVER -->
+            <!-- FINAL -->
             <div class="page back">
                 <div class="content">
                     <h2>Final</h2>
-                    <p>
-                        Este proyecto es una mezcla de inspiración y vida real.
-                        Gracias por leer mi historia.
-                    </p>
 
-                    <label class="btn next" for="p1" data-sound="flip">Reiniciar ↺</label>
+                    <!-- Puedes cambiar por prince5.jpg o prince6.jpg si te gusta más -->
+                    <div class="media">
+                        <img src="assets/img/prince6.jpg" alt="Final illustration" />
+                    </div>
 
-                    <hr>
-                    <h3>Créditos</h3>
-                    <ul class="credits">
-                        <li>Sonido “page flip”: <em>agrega aquí tu fuente</em></li>
-                        <li>Imágenes (si usas): <em>agrega aquí tu fuente</em></li>
-                    </ul>
+                    <div class="scrollArea">
+                        <p class="thanks">&#9841;THANK YOU FOR READING MY STORY&#9841;</p>
+                        <p>This project was built from inspiration and real life experiences.</p>
+
+                        <hr>
+                        <h3>Credits</h3>
+                        <ul class="credits">
+                            <a href="https://www.w3schools.com/charsets/tryit.asp?deci=9841">link text</a>
+                        </ul>
+                    </div>
+
+                    <div class="navRow">
+                        <label class="btn next" for="p1" data-sound="flip">Restart ↺</label>
+                    </div>
                 </div>
             </div>
 
         </section>
     </main>
 
-    <!-- Sound (must be triggered by user action) -->
-    <audio id="flipSound" src="assets/sound/page-flip.mp3"></audio>
+    <!-- LOOP audio -->
+    <audio id="flipSound" src="assets/sound/page-flip.mp3" preload="auto" loop></audio>
 
     <script src="js/script.js"></script>
 </body>
