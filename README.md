@@ -1,18 +1,20 @@
-# Project 1 — Interactive Story
-## Title
-El Principito & Mi Historia
+#Project 1—Interactive Story
+
+##Title
+The Little Prince & My Story
 
 ## Overview
-Este proyecto es una historia interactiva inspirada en “El Principito” y combinada con mi experiencia personal. La historia solo se revela cuando el usuario interactúa con la página.
+This project is an interactive story inspired by “The Little Prince” and combined with my personal experience. The story is only revealed when the user interacts with the page.
 
-## How to interact
-- Click en los botones para pasar páginas (libro interactivo).
-- Hover sobre la estrella ⭐ para revelar un mensaje secreto.
+##How to interact
+- Click the buttons to flip pages (interactive book).
+- Hover the star ⭐ to reveal a secret message.
 
 ## Requirements checklist
+
 ### Animations (3)
 1. Page flip (CSS transform + transition)
-2. Text fade-in when page changes (CSS keyframes)
+2. Text fade in when the page changes (CSS keyframes)
 3. Floating star animation (CSS keyframes)
 
 ### User-triggered events (2)
@@ -20,17 +22,17 @@ Este proyecto es una historia interactiva inspirada en “El Principito” y com
 2. Hover to reveal hidden message
 
 ### Sound (1)
-- Page flip sound plays on page change (click)
+- Loop audio starts on interaction (click) and continues playing.
 
-### Responsive Design
-- Layout adapts for mobile using media queries
+### Responsive design
+- Layout adapts for mobile using media queries.
 
 ## Tech
-HTML / CSS / JavaScript
+HTML/CSS/JavaScript
 
 ## Credits (REQUIRED)
-- Page flip sound: [ADD LINK + LICENSE]
-- Images (if used): [ADD LINKS + LICENSES]
+- Page flip / background audio: Pixabay (https://pixabay.com/)
+- Images: Pixabay (https://pixabay.com/)
 
 ## Live link
 https://werner1020p.github.io/project1/
